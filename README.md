@@ -57,7 +57,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 python trainer/beehive_llm_flwr_server.py \
   --server_address 0.0.0.0:8080 \
   --rounds 5 \
-  --num_clients 2 \
+  --num_clients 2 
   
 ```
 
@@ -66,16 +66,16 @@ python trainer/beehive_llm_flwr_server.py \
 python trainer/beehive_llm_flwr_client.py \
   --server_address 127.0.0.1:8080 \
   --device auto \
-  --data_path dataset/sample.jsonl \
-  --tokenizer_path tokenizer \
-  --batch_size 8 \
-  --local_epochs 1 \
+  --data_path <Your JOSNL file> \
+  --tokenizer_path <Your tokenizer folder with HF config file> \
+  --batch_size <Your setting such as 4 if home computer>\
+  --local_epochs < First time to try, you can choose 1> \
   --total_rounds 5 \
   --learning_rate 5e-4 \
   --accumulation_steps 8 \
-  --max_seq_len 512 \
-  --checkpoint_dir checkpoints \
-  --from_weight none
+  --max_seq_len < based on your data such as 512> \
+  --checkpoint_dir <output folder for checkpoints> \
+
 ```
 
 When all expected clients are connected (`--num_clients` on the server), rounds begin automatically. Metrics are logged per client and aggregated on the server.
