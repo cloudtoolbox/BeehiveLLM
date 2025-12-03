@@ -58,16 +58,7 @@ python trainer/beehive_llm_flwr_server.py \
   --server_address 0.0.0.0:8080 \
   --rounds 5 \
   --num_clients 2 \
-  --vocab_size 6400 \
-  --hidden_size 512 \
-  --num_layers 8 \
-  --num_heads 8 \
-  --num_kv_heads 2 \
-  --max_position_embeddings 32768 \
-  --flash_attn 0 \
-  --use_moe 0 \
-  --init_weight none \
-  --checkpoint_dir checkpoints
+  
 ```
 
 3) Start each client in a separate shell (adjust paths/devices):
