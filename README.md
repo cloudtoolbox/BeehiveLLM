@@ -84,7 +84,7 @@ When all expected clients are connected (`--num_clients` on the server), rounds 
 
 ## Apple Silicon (M1/M2/M3/M4) multi-Mac setup
 - Works well for lightweight runs; each Mac runs one Flower client, and one hosts the server.
-- Use `--device auto` (picks `mps`) or force `--device mps` on clients; keep `--dtype bfloat16` or `float16` for speed.
+- Use `--device auto` (picks `mps`) or force `--device mps` on clients; keep `--dtype  float16` for speed.
 - Keep batches modest (e.g., `--batch_size 4-8`, `--accumulation_steps 8-16`) to fit M-series memory.
 - Server: `--num_clients` must equal the number of Macs you launch; all must be online for each round.
 - Networking: pick a reachable host (e.g., `--server_address 192.168.x.x:8080`) and ensure firewalls allow the port.
